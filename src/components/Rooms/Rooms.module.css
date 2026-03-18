@@ -1,0 +1,314 @@
+.container{
+  max-width:1200px;
+  margin:auto;
+     padding: 80px 0
+}
+
+
+/* HEADER */
+
+.heading{
+    font-style: italic;
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.heading h2{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.heading p{
+  max-width:620px;
+  margin:auto;
+  font-size:14px;
+  color:#666;
+}
+
+
+/* NORMAL CARD */
+
+
+.roomWrapper{
+  display:grid;
+  grid-template-columns:615px 554px;
+  grid-template-areas: "text image";
+  align-items:center;
+  justify-content:center;
+  margin-bottom:120px;
+}
+
+
+/* REVERSE CARD */
+
+.reverse{
+  grid-template-areas: "image text";
+}
+
+
+/* TEXT CARD */
+
+.textCard{
+  grid-area:text;
+  border:2px solid var(--primary-blue);
+  border-radius:20px;
+  padding:35px;
+  z-index:2;
+}
+
+.reverse .textCard{
+  margin-left:-80px;
+}
+
+
+.textCard h3{
+  font-size:16px;
+  color:var(--primary-blue);
+  margin-bottom:12px;
+}
+
+.textCard p{
+    width: 460px;
+    height: 76px;
+  font-size:14px;
+  color:#666;
+  margin-bottom:20px;
+}
+
+
+/* FEATURES */
+
+.features{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:22px;
+}
+
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+
+/* BUTTON */
+
+.btn {
+  background: var(--primary-blue);
+  color: white;
+  border: 1px solid transparent; /* keep space for border */
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.btn:hover {
+  background: white;
+  color: var(--primary-blue);
+  border-color: var(--primary-blue); /* only change the color */
+}
+
+.reverse .textCard .btn {
+  border: 1px solid transparent; /* keep space for hover */
+  background: var(--primary-blue);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.roomWrapper.reverse .btn:hover {
+  background: white;
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+
+/* IMAGE */
+
+.imageWrapper{
+  grid-area:image;
+  position:relative;
+  margin-left:-60px;
+  z-index: 999;
+}
+
+.reverse .imageWrapper{
+  margin-left:0;
+  margin-right:50px;
+}
+
+.imageWrapper img{
+  width:550px;
+  height:500px;
+  border-radius:18px;
+  object-fit:cover;
+}
+
+
+/* TAG */
+
+.tag {
+  position: absolute;
+  font-style: italic;
+  font-weight: 700;
+  top: 30px;
+  right: 60px;
+  background: white;
+  color: var(--primary-blue);
+  padding: 20px 40px;
+  font-size: 18px;
+  
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.reverse .tag {
+  position: absolute;
+  font-style: italic;
+  font-weight: 700;
+  top: 30px;       /* same vertical alignment as normal */
+  left: 0;      /* align to left for reverse */
+  right: auto;     /* unset the right property */
+  background: white;
+  color: var(--primary-blue);
+  padding: 20px 40px;
+  font-size: 18px;
+
+  /* Rounded corners on the right only */
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.textCard .seeMore {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-blue);
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 0px;
+  z-index: 1000;
+}
+
+/* ----------------- SMALL SCREENS ----------------- */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 15px;
+  }
+
+  /* HEADER */
+  .heading h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .heading p {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  /* ROOM WRAPPER GRID */
+  .roomWrapper {
+    grid-template-columns: 1fr; /* stack text + image vertically */
+    grid-template-areas: 
+      "image"
+      "text";
+    margin-bottom: 60px;
+  }
+
+  .reverse {
+    grid-template-areas: 
+      "image"
+      "text"; /* keep same stacking for reverse */
+  }
+
+  /* TEXT CARD */
+  .textCard {
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+
+  .reverse .textCard {
+    margin-left: 0; /* remove negative margin */
+  }
+
+  .textCard h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .textCard p {
+    font-size: 13px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  /* FEATURES */
+  .features {
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .featureItem {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  /* SEE MORE */
+  .textCard .seeMore {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  /* BUTTON */
+  .btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  /* IMAGE */
+  .imageWrapper {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .imageWrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  /* TAG */
+  .tag {
+    top: 16px;
+    right: 0px;
+    padding: 12px 24px;
+    font-size: 10px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .reverse .tag {
+    left: 0px;
+    top: 16px;
+    right: auto;
+    padding: 12px 24px;
+    font-size: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}

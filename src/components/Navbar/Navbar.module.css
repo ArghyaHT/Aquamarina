@@ -1,0 +1,232 @@
+/* --------------------- Header & Top Bar --------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  width: 100%;
+}
+
+.topbar {
+  width: 100%;
+  background-color: var(--primary-black);
+  color: white;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.topbarContent {
+  display: flex;
+  white-space: nowrap; /* keep text on a single line */
+  gap: 50px;
+  animation: scrollText 25s linear infinite;
+  padding: 5px 0;
+}
+
+/* Optional: hover to pause the scrolling */
+.topbarContent:hover {
+  animation-play-state: paused;
+}
+
+/* Scroll animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* --------------------- Desktop Navbar --------------------- */
+.desktopNavbar {
+  height: 100px;
+  display: block;
+  background-color: var(--primary-blue);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 90px;
+}
+
+.navLinks a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--primary-white);
+  font-weight: 500;
+}
+
+.bookBtn {
+  background-color: var(--primary-white);
+  color: var(--primary-blue);
+  padding: 20px 30px;
+  border: none;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --------------------- Mobile Navbar --------------------- */
+.mobileNavbar {
+  display: none; /* hidden by default, shown only on mobile */
+  background-color: var(--primary-blue);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1020;
+}
+
+.mobileNavbar .navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuIcon {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary-white);
+}
+
+.mobileBookBtn {
+  background-color: var(--primary-white);
+  color: var(--primary-blue);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cartIcon {
+  position: relative;
+  background-color: transparent;
+  color: var(--primary-white);
+  border: none;
+  cursor: pointer;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -20px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 4px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Mobile Menu (Dropdown) */
+.mobileMenu {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  
+}
+
+.mobileNavSection {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.mobileNavSection li {
+  padding: 8px 20px;
+}
+
+.sectionHeading {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.mobileNavSection li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 5px 0;
+}
+
+
+/* Small screens: 1024px and below */
+@media (max-width: 1024px) {
+  .desktopNavbar {
+    display: none;       /* hide desktop navbar */
+  }
+
+  /* .topbarContent {
+    display: none;       
+  } */
+
+  .mobileNavbar {
+    display: block;      /* show mobile navbar */
+  }
+}
+
+/* Tablets: 768px and below (redundant but ensures consistency) */
+@media (max-width: 768px) {
+  .desktopNavbar {
+    display: none;
+  }
+
+  /* .topbarContent {
+    display: none;
+  } */
+
+  .mobileNavbar {
+    display: block;
+  }
+
+    .topbarContent {
+    animation: scrollText 8s linear infinite; /* faster */
+  }
+}
+
+/* Small devices: 480px and below */
+@media (max-width: 480px) {
+  .desktopNavbar {
+    display: none;
+  }
+
+  /* .topbarContent {
+    display: none;
+  } */
+
+  .mobileNavbar {
+    display: block;
+  }
+
+  .cartBadge {
+    right: -15px;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+}
+
+/* Extra small devices: 320px and below */
+@media (max-width: 320px) {
+  .desktopNavbar {
+    display: none;
+  }
+
+  /* .topbarContent {
+    display: none;
+  } */
+
+  .mobileNavbar {
+    display: block;
+  }
+}

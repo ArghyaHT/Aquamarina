@@ -1,0 +1,249 @@
+.ridesSection {
+  padding: 80px 0;
+  background: white;
+}
+
+/* HEADER */
+
+.header {
+  font-style: italic;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* GRID */
+
+.ridesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  justify-items: center;
+  padding: 0px 70px;
+}
+
+/* CARD WRAPPER */
+
+.cardWrapper {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+/* BACK OFFSET BORDER */
+
+.cardWrapper::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--primary-violet);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* FRONT CARD */
+
+.card {
+  position: relative;
+  height: 100%;
+  background: white;
+  border: 2px solid var(--primary-violet);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.cardWrapper:hover::before {
+  background: var(--primary-violet);
+}
+
+/* IMAGE */
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+/* CONTENT */
+
+.cardContent {
+  padding: 22px;
+  text-align: center;
+}
+
+.cardContent h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-violet);
+  margin-bottom: 10px;
+}
+
+.cardContent p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+/* ================= LARGE TABLET ================= */
+
+@media (max-width: 1200px) {
+
+  .ridesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  .cardWrapper {
+    width: 260px;
+    height: 380px;
+  }
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+  .ridesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .cardWrapper {
+    width: 260px;
+    height: 360px;
+  }
+
+  .header h2 {
+    font-size: 28px;
+  }
+
+}
+
+
+/* ================= SMALL TABLET ================= */
+
+@media (max-width: 768px) {
+
+  .ridesSection {
+    padding: 60px 0;
+  }
+
+  .ridesGrid {
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .cardWrapper {
+    width: 240px;
+    height: 350px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .ridesGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .cardWrapper {
+    width: 100%;
+    max-width: 320px;
+    height: 340px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 420px) {
+
+  .ridesSection {
+    padding: 50px 0;
+  }
+
+  .cardWrapper {
+    max-width: 300px;
+    height: 330px;
+  }
+
+  .cardContent {
+    padding: 18px;
+  }
+
+  .cardContent h3 {
+    font-size: 15px;
+  }
+
+  .cardContent p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* ================= ULTRA SMALL (320px) ================= */
+
+@media (max-width: 320px) {
+
+  .cardWrapper {
+    max-width: 270px;
+    height: 310px;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .cardContent h3 {
+    font-size: 14px;
+  }
+
+  .cardContent p {
+    font-size: 12px;
+  }
+
+}

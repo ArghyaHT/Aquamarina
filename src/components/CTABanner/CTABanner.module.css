@@ -1,0 +1,104 @@
+/* ---------------- CTA Blue Banner ---------------- */
+
+.container{
+    padding: 0px 80px;
+}
+.ctaBanner {
+  background: linear-gradient(to top, #111fa2, #0266D9); /* bottom (#111fa2) to top (#0266D9) */
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+  margin: 60px 0;
+}
+
+.ctaBanner h2 {
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.ctaBanner p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.bookBtn {
+  background: white;
+  color: #0266D9;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bookBtn:hover {
+  background: #f0f0f0;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 1024px) {
+  .ctaBanner {
+    padding: 50px 30px;
+    margin: 50px 0;
+  }
+
+  .ctaBanner h2 {
+    font-size: 24px;
+  }
+
+  .ctaBanner p {
+    font-size: 15px;
+  }
+
+  .bookBtn {
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+    .container{
+    padding: 0px 20px;
+}
+  .ctaBanner {
+    padding: 40px 20px;
+    margin: 20px 0;
+  }
+
+  .ctaBanner h2 {
+    font-size: 22px;
+  }
+
+  .ctaBanner p {
+    font-size: 14px;
+  }
+
+  .bookBtn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaBanner {
+    margin: 0;
+  }
+
+  .ctaBanner h2 {
+    font-size: 18px;
+  }
+
+  .ctaBanner p {
+    font-size: 12px;
+  }
+
+  .bookBtn {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+}

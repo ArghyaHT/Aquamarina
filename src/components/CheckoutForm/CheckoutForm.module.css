@@ -1,0 +1,314 @@
+.container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 🔥 MAIN LAYOUT FIX */
+.wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* prevents equal height stretch */
+}
+
+/* LEFT CARD (Form) */
+.wrapper > .card:first-child {
+  height: 390px;
+  flex: 0 0 50%; /* fixed width */
+}
+
+/* RIGHT CARD (Summary) */
+.wrapper > .card:last-child {
+  flex: 1; /* take remaining space */
+  max-height: 80vh; /* optional */
+}
+
+/* CARD BASE */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.itemsList {
+  max-height: 250px;   /* adjust based on your design */
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 5px;  /* avoid scrollbar overlap */
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ---------------- Order Items ---------------- */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Image */
+.itemImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Content */
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.title {
+  color: var(--primary-blue);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.date {
+  color: #555;
+  font-size: 12px;
+}
+
+/* Qty Badge */
+.qty {
+  display: inline-block;
+  padding: 5px 10px;
+  font-style: italic;
+  font-size: 13px;
+  background-color: var(--primary-violet);
+  color: var(--primary-white);
+  border-radius: 999px;
+  text-align: center;
+  width: fit-content;
+}
+
+/* Price */
+.price {
+  font-weight: 600;
+}
+
+/* ---------------- Coupon ---------------- */
+.coupon {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.coupon input {
+  flex: 1;
+}
+
+.coupon button {
+  padding: 10px 15px;
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ---------------- Pricing ---------------- */
+.pricing div {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ---------------- Button ---------------- */
+.payBtn {
+  width: 230px;
+    margin: 15px auto 0;   
+  display: block;        
+
+  margin-top: 15px;
+  padding: 15px 40px;
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ---------------- Responsive ---------------- */
+/* ---------------- Tablets (1024px) ---------------- */
+@media (max-width: 1024px) {
+  .wrapper {
+    gap: 15px;
+  }
+
+  .wrapper > .card:first-child {
+    flex: 0 0 45%;
+    height: auto; /* 🔥 remove fixed height */
+  }
+
+  .itemsList {
+    max-height: 220px;
+  }
+}
+
+/* ---------------- Small Tablets (768px) ---------------- */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper > .card:first-child,
+  .wrapper > .card:last-child {
+    flex: 1;
+    width: 100%;
+    max-height: none;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .itemsList {
+    max-height: 200px;
+  }
+}
+
+/* ---------------- Mobile (480px) ---------------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Items */
+  .item {
+    gap: 8px;
+  }
+
+  .itemImage {
+    width: 45px;
+    height: 45px;
+  }
+
+  .title {
+    font-size: 13px;
+  }
+
+  .date {
+    font-size: 11px;
+  }
+
+  .qty {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .itemsList {
+    max-height: 180px;
+  }
+
+  /* Coupon */
+  .coupon {
+    flex-direction: column;
+  }
+
+  .coupon button {
+    width: 100%;
+  }
+
+  /* Button */
+  .payBtn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* ---------------- Extra Small Devices (360px) ---------------- */
+@media (max-width: 360px) {
+  .heading {
+    font-size: 18px;
+  }
+
+  .itemImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+
+  .qty {
+    font-size: 10px;
+  }
+
+  .itemsList {
+    max-height: 160px;
+  }
+}
+
+/* ---------------- Ultra Small (320px) ---------------- */
+@media (max-width: 320px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .itemsList {
+    max-height: 140px;
+  }
+
+  .payBtn {
+    font-size: 13px;
+    padding: 8px;
+  }
+}

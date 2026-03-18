@@ -1,0 +1,191 @@
+.servicesSection {
+  padding: 40px 0;
+}
+.container {
+  width: 100%;
+}
+/* ================= DESKTOP ================= */
+
+.servicesBox {
+  width: 810px;
+  height: 135px;
+  display: flex;
+  background: white;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* each item */
+
+.serviceItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* divider */
+
+.serviceItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: #eee;
+  transition: 0.3s;
+}
+
+/* icon */
+
+.icon {
+  font-size: 34px;
+  color: var(--primary-violet);
+  transition: 0.3s;
+}
+
+/* text */
+
+.serviceItem span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* hover */
+
+.serviceItem:hover {
+  background: var(--primary-violet);
+}
+
+.serviceItem:hover .icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.serviceItem:hover span {
+  color: white;
+}
+
+.serviceItem:hover::after {
+  background: transparent;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .servicesBox {
+    width: 95%;
+    height: 110px;
+  }
+
+  .icon {
+    font-size: 30px;
+  }
+
+}
+
+/* ================= MOBILE STICKY TOP ================= */
+
+@media (max-width: 600px) {
+
+  .servicesSection {
+    padding: 0;
+    position: sticky;
+    top: 132px;
+    z-index: 1000;
+    background: white;
+  }
+
+  @media (max-width: 600px) {
+  .servicesSection .container {
+    width: 100vw !important;   /* ignore global container width */
+    padding: 0 !important;     /* remove container padding */
+    margin: 0 !important;      /* remove margin auto */
+    max-width: 100% !important;
+  }
+}
+
+  .servicesBox {
+
+    width: 100%;
+    height: 70px;
+
+    border-radius: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  }
+
+  .serviceItem {
+    flex: 1;
+    gap: 2px;
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+
+  .serviceItem span {
+    font-size: 11px;
+  }
+
+  .serviceItem::after {
+    display: none;
+  }
+
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 420px) {
+
+  .servicesBox {
+    height: 65px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .serviceItem span {
+    font-size: 10px;
+  }
+
+}
+
+
+/* ================= ULTRA SMALL (320px) ================= */
+
+@media (max-width: 320px) {
+
+  .servicesBox {
+    height: 60px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .serviceItem span {
+    font-size: 9px;
+  }
+
+}

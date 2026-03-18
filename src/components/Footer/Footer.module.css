@@ -1,0 +1,218 @@
+/* ---------------- Footer Container ---------------- */
+.footerContainer {
+  background-color: #0266D9;
+  color: white;
+  padding: 40px 70px;
+  text-align: center;
+  font-family: 'Avenir', sans-serif;
+}
+
+/* ---------------- Logo ---------------- */
+.footerLogo img {
+  height: 120px;
+  margin-bottom: 25px;
+}
+
+/* ---------------- Navigation Links ---------------- */
+.navLinks {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* wrap on small screens */
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navLinks a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ---------------- Info Grid ---------------- */
+.footerInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 40px;
+}
+
+/* ---------------- Info Item ---------------- */
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Round icons */
+.infoItem .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  margin-bottom: 10px;
+  transition: background 0.3s, color 0.3s;
+  color: white;
+}
+
+.infoItem .icon:hover {
+  background: white;
+  color: #0266D9;
+}
+
+/* Headings */
+.infoItem h4 {
+  font-style: italic;
+  font-size: 18px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Links (phone, email, address) */
+.iconLink,
+.phoneLink,
+.emailLink,
+.addressLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.iconLink:hover,
+.phoneLink:hover,
+.emailLink:hover,
+.addressLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ---------------- Bottom Bar ---------------- */
+.footerBottom {
+  margin-top: 30px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.socialIcons a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+}
+
+.socialIcons a:hover {
+  background: white;
+  color: #0266D9;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ---------------- Responsive: Tablets ---------------- */
+@media (max-width: 768px) {
+  .footerContainer {
+    padding: 40px 20px;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footerInfoGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+/* ---------------- Responsive: Phones ---------------- */
+@media (max-width: 480px) {
+  .footerContainer {
+    padding: 30px 15px;
+  }
+
+  .navLinks a {
+    font-size: 14px;
+  }
+
+  .infoItem h4 {
+    font-size: 16px;
+  }
+
+  .infoItem .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .socialIcons a {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+/* ---------------- Responsive: Extra Small Phones ---------------- */
+@media (max-width: 320px) {
+  .footerContainer {
+    padding: 20px 10px;
+  }
+
+  .navLinks a {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .footerInfoGrid {
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .infoItem h4 {
+    font-size: 14px;
+  }
+
+  .infoItem .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .socialIcons a {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}

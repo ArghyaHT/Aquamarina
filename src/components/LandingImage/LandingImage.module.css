@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  height: 1200px;             /* desired height for web screens */
+  background-color: white;   /* white background */
+  overflow: hidden;
+  position: relative;        /* needed if using next/image fill */
+}
+
+.image {
+  width: 100%;
+  height: 100%;              
+  display: block;
+}
+
+/* Optional: set max height for large screens */
+@media (min-width: 1025px) {
+  .container {
+    height: 700px;          /* original image height */
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    height: auto;           /* let height adjust */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    height: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    height: auto;
+  }
+}
