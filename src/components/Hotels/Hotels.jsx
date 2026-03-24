@@ -229,6 +229,21 @@ const Hotels = () => {
     const adults = guests[hotel._id]?.adults ?? 1;
     const children = guests[hotel._id]?.children ?? 0;
 
+    // ✅ Validate dates first
+  if (!checkIn || !checkOut) {
+    alert("Please select check-in and check-out dates");
+    return;
+  }
+
+  const checkInDate = new Date(checkIn);
+  const checkOutDate = new Date(checkOut);
+
+  if (checkOutDate < checkInDate) {
+    alert("Check-out date must be after check-in date");
+    return;
+  }
+
+
     const days = calculateDays(checkIn, checkOut);
 
     try {
