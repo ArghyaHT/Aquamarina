@@ -97,10 +97,11 @@
 .mobileBookBtn {
   background-color: var(--primary-white);
   color: var(--primary-blue);
-  padding: 10px 20px;
+  padding: 6px 14px;   /* reduced */
   border: none;
   border-radius: 100px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 13px;     /* smaller text */
   cursor: pointer;
 }
 
@@ -156,6 +157,17 @@
   color: #000;
   display: block;
   padding: 5px 0;
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.2); /* optional dark tint */
+  z-index: 1010;
 }
 
 

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "@/store/uiSlice";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,6 +33,7 @@ const Navbar = () => {
   );
 
   return (
+    <>
     <header className={styles.header}>
 
       {/* Top Bar */}
@@ -74,7 +76,7 @@ const Navbar = () => {
                 className={styles.cartIcon}
                 onClick={() => dispatch(toggleCart())}
               >
-                <FaCartPlus size={35} />
+                <HiOutlineShoppingCart size={35} />
 
                 {totalItems > 0 && (
                   <span className={styles.cartBadge}>
@@ -94,15 +96,6 @@ const Navbar = () => {
       {/* Mobile Navbar */}
       <div className={styles.mobileNavbar}>
         <div className="container">
-
-          {/* Top Bar */}
-          {/* <div className={styles.topbar}>
-            <div className={styles.topbarContent}>
-              <span>⚙ Summer Offer 20% off</span>
-              <span>⚙ Summer Offer 20% off</span>
-              <span>⚙ Summer Offer 20% off</span>
-            </div>
-          </div> */}
           <div className={styles.navbarContent}>
             {/* Hamburger */}
             <div
@@ -125,7 +118,7 @@ const Navbar = () => {
                 className={styles.cartIcon}
                 onClick={() => dispatch(toggleCart())}
               >
-                <FaCartPlus size={28} />
+                <HiOutlineShoppingCart size={28} />
 
                 {totalItems > 0 && (
                   <span className={styles.cartBadge}>
@@ -135,13 +128,13 @@ const Navbar = () => {
               </button>
             ) : (
               <Link href="/booking">
-                <button className={styles.mobileBookBtn}>Book Now</button>
+                {/* <button className={styles.mobileBookBtn}>Book Now</button> */}
               </Link>
             )}
           </div>
         </div>
 
-        {/* Mobile Menu (links toggle) */}
+         {/* Blur Overlay */}
         {menuOpen && (
           <div className={styles.mobileMenu}>
             <ul className={styles.mobileNavSection}>
@@ -171,6 +164,15 @@ const Navbar = () => {
         )}
       </div>
     </header>
+
+    {menuOpen && (
+  <div
+    className={styles.menuOverlay}
+    onClick={() => setMenuOpen(false)}
+  />
+)}
+    
+    </>
   );
 };
 

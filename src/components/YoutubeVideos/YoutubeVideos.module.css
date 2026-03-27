@@ -155,12 +155,13 @@
     grid-template-columns: 1fr;
   }
 
+
   .mainVideo {
     height: 300px;
   }
 
   .sideCard {
-    height: 150px;
+    height: 300px;   /* same as main video */
   }
 
   .textContent h1 {
@@ -186,7 +187,7 @@
   }
 
   .sideCard {
-    height: 120px;
+    height: 250px;
   }
 
   .playButton {
@@ -216,7 +217,7 @@
   }
 
   .sideCard {
-    height: 100px;
+    height: 200px;
   }
 
   .textContent h1 {
@@ -234,8 +235,7 @@
   }
 
   .smallPlay {
-    width: 25px;
-    height: 25px;
-    font-size: 14px;
+    width:40px;
+    height: 40px;
   }
 }

@@ -1,92 +1,95 @@
-.tabsWrapper{
-width:100%;
-display:flex;
-justify-content:center;
-margin-top:-25px;
-position:relative;
-z-index:5;
+.tabsWrapper {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-top: -25px;
+   position: relative;
+   z-index: 5;
 }
 
-.tabsContainer{
-width:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
+.tabsContainer {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 /* TAB BAR */
 
-.tabs{
-display:flex;
-justify-content:center;
-align-items:center;
+.tabs {
+   width: 50vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-background:white;
-border-radius:40px;
-padding:6px;
+   background: white;
+   border-radius: 40px;
+   padding: 12px;
 
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-gap:6px;
-height: 100%;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+   gap: 6px;
+   height: 100%;
 }
 
 /* TAB */
 
-.tab{
-display:flex;
-align-items:center;
-gap:8px;
+.tab {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
 
-border:none;
-padding:12px 24px;
-border-radius:30px;
+   border: none;
+   padding: 12px 24px;
+   border-radius: 30px;
 
-background:transparent;
-cursor:pointer;
+   background: transparent;
+   cursor: pointer;
 
-font-size:14px;
-font-weight:500;
-color:#555;
+   font-size: 18px;
+   font-weight: 500;
+   color: #555;
 
-transition:all .3s ease;
+   transition: all .3s ease;
 }
 
 /* ICON */
 
-.icon{
-font-size:16px;
+.icon {
+   font-size: 18px;
 }
 
 /* ACTIVE TAB */
 
-.active{
-background:var(--primary-violet);
-color:white;
+.active {
+   background: var(--primary-violet);
+   color: white;
 }
 
 /* CONTENT */
 
-.content{
-margin-top:40px;
-width:100%;
-text-align:center;
+.content {
+   margin-top: 40px;
+   width: 100%;
+   text-align: center;
 }
 
 /* ===============================
    TABLET
 ================================ */
 
-@media (max-width:1024px){
+@media (max-width:1024px) {
 
-.tabs{
-padding:5px;
-gap:5px;
-}
+   .tabs {
+      padding: 5px;
+      gap: 5px;
+   }
 
-.tab{
-padding:10px 20px;
-font-size:13px;
-}
+   .tab {
+      padding: 10px 20px;
+      font-size: 13px;
+   }
 
 }
 
@@ -94,23 +97,23 @@ font-size:13px;
    MOBILE
 ================================ */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-.tabsWrapper{
-margin-top:-20px;
-}
+   .tabsWrapper {
+      margin-top: -20px;
+   }
 
-.tabs{
-flex-wrap:wrap;
-justify-content:center;
-border-radius:30px;
-padding:6px 8px;
-}
+   .tabs {
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 30px;
+      padding: 6px 8px;
+   }
 
-.tab{
-padding:10px 18px;
-font-size:13px;
-}
+   .tab {
+      padding: 10px 18px;
+      font-size: 13px;
+   }
 
 }
 
@@ -118,22 +121,37 @@ font-size:13px;
    SMALL MOBILE
 ================================ */
 
-@media (max-width:480px){
+@media (max-width:480px) {
 
-.tabs{
-flex-wrap:wrap;
-gap:4px;
-border-radius:25px;
-}
+  .tabs {
+    width: 90vw;
+    flex-wrap: nowrap;          /* keep in one line */
+    overflow-x: auto;           /* allow horizontal scroll */
+    gap: 6px;
+    border-radius: 25px;
+    padding: 8px;
+    justify-content: flex-start;
+  }
 
-.tab{
-padding:8px 14px;
-font-size:12px;
-gap:6px;
-}
+  .tabs::-webkit-scrollbar {
+    display: none;              /* hide scrollbar */
+  }
 
-.icon{
-font-size:14px;
+  .tab {
+    width: auto;                /* prevent full width */
+    flex: 0 0 auto;             /* stop shrinking */
+    padding: 8px 14px;
+    font-size: 14px;
+    gap: 6px;
+    white-space: nowrap;        /* keep text in one line */
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+
+  .active {
+   font-size: 16px;
 }
 
 }
@@ -142,27 +160,31 @@ font-size:14px;
    MINIMUM MOBILE (320px)
 ================================ */
 
-@media (max-width:320px){
+@media (max-width:320px) {
 
-.tabsWrapper{
-margin-top:-15px;
+   .tabsWrapper {
+      margin-top: -15px;
+   }
+
+   .tabs {
+      flex-wrap: wrap;
+      gap: 3px;
+      padding: 5px;
+      border-radius: 20px;
+   }
+
+   .tab {
+      padding: 7px 10px;
+      font-size: 11px;
+      gap: 5px;
+   }
+
+     .active {
+   font-size: 13px;
 }
 
-.tabs{
-flex-wrap:wrap;
-gap:3px;
-padding:5px;
-border-radius:20px;
-}
-
-.tab{
-padding:7px 10px;
-font-size:11px;
-gap:5px;
-}
-
-.icon{
-font-size:13px;
-}
+   .icon {
+      font-size: 13px;
+   }
 
 }

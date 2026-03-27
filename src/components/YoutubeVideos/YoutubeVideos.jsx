@@ -39,7 +39,7 @@ const YoutubeVideos = () => {
                             />
                             <div className={styles.overlay}>
                                 <div className={styles.playButton} onClick={handleMainPlay}>
-                                    <FaPlay size={24} /> {/* size can be adjusted */}
+                                    <FaPlay /> {/* size can be adjusted */}
                                 </div>
                                 <div className={styles.textContent}>
                                     <h1>Aqua Marina Water Park</h1>
@@ -76,7 +76,7 @@ const YoutubeVideos = () => {
                                         className={styles.smallPlay}
                                         onClick={() => handleSidePlay(index)}
                                     >
-                                        <FaPlay size={16} color="white" /> {/* Adjust size/color as needed */}
+                                        <FaPlay color="white" /> {/* Adjust size/color as needed */}
                                     </div>
                                 </>
                             ) : (
